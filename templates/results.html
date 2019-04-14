@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Hello World</title>
+</head>
+<body class="grey lighten-3">
+    <p class="flow-text blue-text center">Here is your Perfect Team</p>
+    {% if bat_status %}
+    <table class="striped">
+        <thead class="blue darken-1 black-text text-lighten-3">
+            <tr>
+                <th>Player</th>
+                <th>MP</th>
+                <th>NO</th>
+                <th>100s</th>
+                <th>50s</th>
+                <th>6s</th>
+                <th>4s</th>
+                <th>HS</th>
+                <th>TR</th>
+                <th>Avg</th>
+                <th>BF</th>
+                <th>SR</th>
+            </tr>
+        </thead>
+        <tbody class="blue white-text lighten-1" style="font-style: bold !important">
+            {% for best in best_bat %}
+            <tr>
+                <td>{{ best[0] }}</td>
+                <td>{{ best[1] }}</td>
+                <td>{{ best[2] }}</td>
+                <td>{{ best[3] }}</td>
+                <td>{{ best[4] }}</td>
+                <td>{{ best[5] }}</td>
+                <td>{{ best[6] }}</td>
+                <td>{{ best[7] }}</td>
+                <td>{{ best[8] }}</td>
+                <td>{{ best[9] }}</td>
+                <td>{{ best[10] }}</td>
+                <td>{{ best[11] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <h4>Something went wrong</h4>
+    {% endif %}
+    <div class="row"></div>
+    {% if bowl_status %}
+    <table class="striped">
+        <thead class="yellow darken-1 red-text">
+            <tr>
+                <th>Player</th>
+                <th>MP</th>
+                <th>BB</th>
+                <th>R</th>
+                <th>W</th>
+                <th>5WI</th>
+                <th>10WH</th>
+                <th>Avg</th>
+                <th>SR</th>
+                <th>Econ</th>
+            </tr>
+        </thead>
+        <tbody class="yellow red-text lighten-1">
+            {% for best in best_bowl %}
+            <tr>
+                <td>{{ best[0] }}</td>
+                <td>{{ best[1] }}</td>
+                <td>{{ best[2] }}</td>
+                <td>{{ best[3] }}</td>
+                <td>{{ best[4] }}</td>
+                <td>{{ best[5] }}</td>
+                <td>{{ best[6] }}</td>
+                <td>{{ best[7] }}</td>
+                <td>{{ best[8] }}</td>
+                <td>{{ best[9] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <h4>Something went wrong</h4>
+    {% endif %}
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+</html>
